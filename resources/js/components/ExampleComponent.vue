@@ -1,23 +1,34 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
-
-                    <div class="card-body">
-                        I'm an example component.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  
 </template>
 
 <script>
     export default {
-        mounted() {
-            console.log('Component mounted.')
-        }
+       data() {
+           return {
+               cart: [],
+               products: []
+           }
+
+       },
+       methods:{
+           soma(fn){
+               return Function('return ' + fn)();
+           }
+       },
+       computed: {
+            totalCart: function(){      
+            
+           //this function only works if the value is string - needs the soma function on methods
+           return this.cart.reduce((acc, item) => acc + this.soma(item.price), 0);
+           
+           
+           //this function only works if the value is not string (it will not work with json format data for decimals)      
+           //return this.cart.reduce((acc, item) => acc + item.price, 0);
+
+         
+            }
+       }
     }
+
 </script>

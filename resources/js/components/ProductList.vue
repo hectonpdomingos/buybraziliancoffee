@@ -86,10 +86,10 @@ export default {
         orderByProducer(){  
             var orderByProducer;       
           if(this.orderBy == 0){ 
-                 orderByProducer = _.orderBy(this.products, 'producer', 'asc');
+                 orderByProducer = _.orderBy(this.products, 'producer_id', 'asc');
                  this.orderBy = 1;
           }else {
-                  orderByProducer = _.orderBy(this.products, 'producer', 'desc');
+                  orderByProducer = _.orderBy(this.products, 'producer_id', 'desc');
                   this.orderBy = 0;
           }
           this.products = orderByProducer;

@@ -3,18 +3,18 @@
         <div class="cart" >
                 <h3>My Cart</h3>
                 <ul>
-                    <li v-for="(product, index)  in cart" v-bind:key="index"> {{ product.name }} - R$ {{ product.preco }}  <a  v-on:click="removeItem(index)" class="far fa-trash-alt"></a> </li>
+                    <li v-for="(product, index)  in cart" v-bind:key="index"> {{ product.name }} - R$ {{ product.price }}  <a  v-on:click="removeItem(index)" class="far fa-trash-alt" >    Remove</a> </li>
                 </ul>
-                Total: {{ (totalCart).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}   
+                Total: {{ (totalCart).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}  
                 <div class="row">
                     
-                <p v-if="this.cart.length > 0" type="button" class="btn btn-success">Pay</p>
+                <p v-if="this.cart.length > 0" type="button" class="btn btn-success">Check Out</p>
                 </div>
         </div>
         <div class="menu">
             <h3>Sort By</h3>
             <div class="row sortBy">
-                <a v-on:click="orderByPrice">Price </a> <a v-on:click="orderByProducer"> Producer </a> <a  v-on:click="orderByPrice"> Type </a>
+                <a v-on:click="orderByPrice">Price </a> <a v-on:click="orderByProducer"> Producer </a> <a  v-on:click="orderByPrice" > Type </a>
             </div>
 
 
@@ -26,9 +26,9 @@
                     <img class="card-img-top" src="/img/cafeimg.jpg" alt="Card image cap">
                     <div class="card-body">
                     <h5 class="card-title">{{product.name }}</h5>
-                    <h5 class="card-title">{{product.Coffeetype}}</h5>
-                    <p class="card-text">Peso: {{ product.peso }} g | Preço: {{ product.preco }} UN</p>
-                    <a v-on:click="addItem(product)" class="btn btn-success" style="width: 13rem;">Adicione no <i class="fas fa-cart-plus"></i></a> 
+                    <h5 class="card-title">{{product.coffeetype}}</h5>
+                    <p class="card-text">Weight: {{ product.weight }} g | Price: {{ product.price }} UN</p>
+                    <a v-on:click="addItem(product)" class="btn btn-success" style="width: 13rem;">Add on <i class="fas fa-cart-plus"></i></a> 
                     
             </div>
             </div>
@@ -43,35 +43,37 @@
 
 
 <script>
-export default {
-     
 
+     
+export default {
       data() {
         return {
             orderBy: 0,
-            cart: [
-               
-            ],
+            cart: [ ],
           
             qtd:0,
             itemQtd: 0,
+            //productsTeste: [],
 
             products: [
-                {id: 1, name: 'Café 3 corações', Coffeetype: 'Canilon',peso: 350, preco: 3.99, producer: 'Fazenda Coração'},
-                {id: 2, name: 'Café Tata', Coffeetype: 'Special', peso: 350, preco: 2.99, producer: 'Fazenda Tata'},
-                {id: 3, name: 'Café Ouro', Coffeetype: 'Altas Montanhas', peso: 350, preco: 4.99, producer: 'Fazenda Ouro'},
-                {id: 4, name: 'Café Montanha', Coffeetype: 'Arabica', peso: 350, preco: 6.99, producer: 'Fazenda Montanha'},
-                {id: 5, name: 'Café Arabica', Coffeetype: 'Robusta', peso: 350, preco: 9.99, producer: 'Fazenda Arabica'},
-                {id: 6, name: 'Café Especial', Coffeetype: 'Robusta', peso: 350, preco: 5.99, producer: 'Fazenda Especial'},
-                {id: 7, name: 'Café Minas', Coffeetype: 'Arabica', peso: 350, preco: 4.99, producer: 'Fazenda Minas'},
-            ]
+                // {id: 1, name: 'Café 3 corações', coffeetype: 'Canilon', weight: 350, price: 3.99, producer: 'Fazenda Coração'},
+                // {id: 2, name: 'Café Tata', coffeetype: 'Special',  weight: 350, price: 4.99, producer: 'Fazenda Tata'},
+                // {id: 3, name: 'Café Ouro', coffeetype: 'Altas Montanhas', weight: 350, price: 4.99, producer: 'Fazenda Ouro'},
+                // {id: 4, name: 'Café Montanha', coffeetype: 'Arabica', weight: 350, price: 6.99, producer: 'Fazenda Montanha'},
+                // {id: 5, name: 'Café Arabica', coffeetype: 'Robusta', weight: 350, price: 9.99, producer: 'Fazenda Arabica'},
+                // {id: 6, name: 'Café Especial', coffeetype: 'Robusta', weight: 350, price: 5.99, producer: 'Fazenda Especial'},
+                // {id: 7, name: 'Café Minas', coffeetype: 'Arabica', weight: 350, price: 4.99, producer: 'Fazenda Minas'},
+                
+            ],
+
+            
         }
     },
 
     methods:{
         addItem(item){
             var itemQtd = this.qtd;
-            var myItem = {id: item.id, name: item.name, peso: item.peso, preco: item.preco}
+            var myItem = {id: item.id, name: item.name, weight: item.weight, price: item.price}
             this.cart.push(myItem);
             
             this.qtd = 0;
@@ -87,7 +89,7 @@ export default {
                  orderByProducer = _.orderBy(this.products, 'producer', 'asc');
                  this.orderBy = 1;
           }else {
-                  rderByProducer = _.orderBy(this.products, 'producer', 'desc');
+                  orderByProducer = _.orderBy(this.products, 'producer', 'desc');
                   this.orderBy = 0;
           }
           this.products = orderByProducer;
@@ -95,10 +97,10 @@ export default {
         orderByPrice(){
            var orderByPrice;
            if(this.orderBy == 0){ 
-                orderByPrice = _.orderBy(this.products, 'preco', 'asc');
+                orderByPrice = _.orderBy(this.products, 'price', 'asc');
                 this.orderBy = 1;
            }else{
-                 orderByPrice = _.orderBy(this.products, 'preco', 'desc');
+                 orderByPrice = _.orderBy(this.products, 'price', 'desc');
                  this.orderBy = 0;
            }            
           this.products = orderByPrice;       
@@ -106,20 +108,40 @@ export default {
         orderByType(){     
             var orderByType;
           if(this.orderBy == 0){              
-                 var orderByType = _.orderBy(this.products, 'Coffeetype', 'asc');
+                 var orderByType = _.orderBy(this.products, 'coffeetype', 'asc');
                  this.orderBy = 1;
           }else {
-                  var orderByType = _.orderBy(this.products, 'Coffeetype', 'desc');
+                  var orderByType = _.orderBy(this.products, 'coffeetype', 'desc');
                   this.orderBy = 0;
           }
           this.products = orderByType;
         },
 
+        //convert string from json to decimal to be able to calculate
+        soma(fn) {
+            return  new Function('return ' + fn)();
+       }
+
     },
+    //get json data from DB
+    created(){
+          axios.get('/products')
+         .then(response => this.products = response.data);
+    },
+    
+
     computed:{
         //calculate de total price in the cart
-        totalCart: function(){         
-             return this.cart.reduce((acc, item) => acc + item.preco, 0);
+        totalCart: function(){      
+            
+           //this function only works if the value is string - needs the soma function on methoods
+           return this.cart.reduce((acc, item) => acc + this.soma(item.price), 0);
+           
+           
+           //this function only works if the value is not string (it will not work with json format data)      
+           //return this.cart.reduce((acc, item) => acc + item.price, 0);
+
+         
        }
     }
 }

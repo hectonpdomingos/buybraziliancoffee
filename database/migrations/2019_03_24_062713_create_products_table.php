@@ -17,15 +17,15 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('type');
-            $table->string('product_code')->unique();
+            $table->string('coffeetype');
+            $table->string('product_code')->unique()->nullable();
             $table->string('ean')->nullable();
             $table->integer('producer_id');
             $table->double('weight');
             $table->string('photo');
             $table->integer('stock');
-            $table->decimal('cost', 8, 2);  //100000,99
-            $table->decimal('price', 8, 2);  //100000,99
+            $table->decimal('cost', 6, 2);   //1000,99
+            $table->decimal('price', 6, 2);  //1000,99
             $table->string('about_coffee')->nullable();
             $table->timestamps();
         });

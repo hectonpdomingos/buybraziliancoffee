@@ -41,4 +41,8 @@ https://github.com/srmklive/laravel-paypal
 https://www.cloudways.com/blog/laravel-paypal-payment-gateway/
 
 
+#dinero.just
+https://frontstuff.io/how-to-handle-monetary-values-in-javascript
+
+
 

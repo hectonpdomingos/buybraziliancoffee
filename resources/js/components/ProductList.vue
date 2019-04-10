@@ -20,7 +20,7 @@
 
         </div>
         <div class="vitrine">
-        <div  v-for="(product, index )  in products" v-bind:key="index">
+        <div  v-for="(product, index )  in paginatedData" v-bind:key="index">
             <div class="vitrine-card">
                     <div class="card">
                     <img class="card-img-top" src="/img/cafeimg.jpg" alt="Card image cap">
@@ -35,8 +35,20 @@
 
             </div>
          </div>
+             
        </div>
-
+         <div class="row col-4">
+                   <button class="btn btn-success"
+                  :disabled="pageNumber === 0" 
+                  @click="prevPage">
+                  Previous
+              </button>
+              <button class="btn btn-success"
+                  :disabled="pageNumber >= pageCount -1" 
+                  @click="nextPage">
+                  Next
+              </button>
+              </div>
        
     </div>
 </template>
@@ -48,13 +60,13 @@
 export default {
       data() {
         return {
+            pageNumber: 0,
+            size: 2, //10 first ids to show
             orderBy: 0,
             cart: [ ],
-          
             qtd:0,
             itemQtd: 0,
-            //productsTeste: [],
-
+           
             products: [
                 // {id: 1, name: 'Café 3 corações', coffeetype: 'Canilon', weight: 350, price: 3.99, producer: 'Fazenda Coração'},
                 // {id: 2, name: 'Café Tata', coffeetype: 'Special',  weight: 350, price: 4.99, producer: 'Fazenda Tata'},
@@ -71,6 +83,12 @@ export default {
     },
 
     methods:{
+        nextPage(){
+         this.pageNumber++;
+        },
+        prevPage(){
+            this.pageNumber--;
+        },
         addItem(item){
             var itemQtd = this.qtd;
             var myItem = {id: item.id, name: item.name, weight: item.weight, price: item.price}
@@ -142,6 +160,20 @@ export default {
            //return this.cart.reduce((acc, item) => acc + item.price, 0);
 
          
+       },
+
+       //get the number of item and then use math.ceil to divide by the number of pages you want
+       pageCount(){
+          let l = this.products.length,
+              s = this.size;
+          return Math.ceil(l/s);
+        },
+        //gets the products data and return paginated
+        paginatedData(){
+          const start = this.pageNumber * this.size,
+          end = start + this.size;
+
+          return this.products.slice(start, end);
        }
     }
 }

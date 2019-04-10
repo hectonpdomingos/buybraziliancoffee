@@ -1,0 +1,44 @@
+Nome: Café Brasil.
+
+Modelo de Negócio: Mostrar diversos cafés de minas gerais de pequenos produtores
+dar a opção de compra e envio pelos correios.
+
+Meios de pagamento: Paypal ou cartão de crédito
+
+
+
+-----
+#Technologies
+    laravel - vue - mysql - stripe - paypal
+-----
+#Tabelas
+    user - email, name, surname, full address, country, telefone ...ok
+    user_shopping - user_id, payment_id, items, dest_address, total
+    product - name, type, producer_id, weight, cost, price, stock, about_coffee
+    producer - owner, full_address, email, phone, cnpj, ES, about_producer....ok
+
+
+----
+#step
+    login->choose the coffee and quantity -> show the total price and shipping ->
+    check the dest address -> select the payment method and buy
+
+
+
+#links for libs
+
+#using strip
+https://justlaravel.com/integrate-stripe-payment-gateway-laravel/
+
+
+
+#pag-seguro
+https://github.com/artistas/laravel-pagseguro/
+
+#paypal
+https://github.com/srmklive/laravel-paypal
+
+https://www.cloudways.com/blog/laravel-paypal-payment-gateway/
+
+
+

@@ -24,8 +24,8 @@ class CreateProductsTable extends Migration
             $table->double('weight');
             $table->string('photo');
             $table->integer('stock');
-            $table->decimal('cost', 6, 2);   //1000,99
-            $table->decimal('price', 6, 2);  //1000,99
+            $table->decimal('cost', 6, 2)->nullable();   //1000.99
+            $table->decimal('price', 6, 2);  //1000.99
             $table->string('about_coffee')->nullable();
             $table->timestamps();
         });

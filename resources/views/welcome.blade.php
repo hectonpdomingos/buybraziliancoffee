@@ -90,7 +90,8 @@
             
             
                 <div class="title m-b-md">
-                    Café Brazil
+                    BuyBrazilian.coffee
+                    <h4>The best marketplace for the best coffee</h4>
                 </div>
             
                 

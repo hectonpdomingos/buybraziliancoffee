@@ -9,9 +9,22 @@ const _ = require ('lodash');
  */
 
 require('./bootstrap');
-const Dinero = require('dinero.js')
+const Dinero = require('dinero.js');
+
+
 
 window.Vue = require('vue');
+window.axios = require('axios');
+
+
+
+//vuex store
+import { store } from './store/store.js'
+
+
+//stripe
+import { StripeCheckout } from 'vue-stripe'
+Vue.component('stripe-checkout', StripeCheckout);
 
 /**
  * The following block of code may be used to automatically register your
@@ -26,7 +39,12 @@ window.Vue = require('vue');
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
+
+Vue.component('market-place', require('./components/Marketplace.vue').default);
 Vue.component('product-list', require('./components/ProductList.vue').default);
+Vue.component('payment-modal', require('./components/Payment.vue').default);
+Vue.component('checkout-page', require('./components/Checkout.vue').default);
+Vue.component('product-form', require('./components/ProductForm.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -34,5 +52,8 @@ Vue.component('product-list', require('./components/ProductList.vue').default);
  */
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    store
+    
+    
 });

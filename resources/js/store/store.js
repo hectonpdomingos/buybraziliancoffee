@@ -7,7 +7,8 @@ Vue.use(Vuex)
 export const store = new Vuex.Store({
     state: {
       products: [],
-      cart: []
+      cart: [],
+      total: 0
     },
     
     
@@ -16,7 +17,10 @@ export const store = new Vuex.Store({
           return state.cart.reduce((acc, item) => acc + Function("return " + item.quantity)(), 0);
       },
       items (state) {
-        return state.cart;
+         return state.cart;
+      },
+      getTotalFromController(state){
+        return state.total;
       }
     },
     mutations: {
@@ -68,8 +72,20 @@ export const store = new Vuex.Store({
           }
         }
       },
-
-                  
+      pay(state){      
+        axios.post('/purchase/cart/', {
+           data: state.cart,
+          _method: 'patch'
+          })
+          .then(function (response) {
+            //get total from the server and put on the total property
+              state.total = response.data.message;
+          })
+          .catch(function (error) {
+                console.log(error);            
+          });
+       }
+                
     },
     actions: {
       //push into cart array using the actions 
@@ -84,6 +100,9 @@ export const store = new Vuex.Store({
       },
       minusQty (context) {
         context.commit('minusQty');
+      },//payment
+      pay(context) {
+        context.commit('pay');
       }
      
 

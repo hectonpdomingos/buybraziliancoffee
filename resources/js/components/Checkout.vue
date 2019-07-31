@@ -1,53 +1,49 @@
 <template>
   <div id="app">
     <div class="product-list">
-      <h3>Shopping Cart</h3>
+      <div class="container-flex" style="margin: 30px;">
+
+      <h3>{{ $t('cart') }}</h3>
       <div class="total-cart">
         <hr>
 
         <p>Subtotal: {{ (subTotal).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,') }}</p>
-        <p>Shipping: {{ shipping }}</p>
+        <p>{{ $t('shipping')}}: {{ shipping }}</p>
         <hr>
-        <h4>Total: {{ (subTotal + shipping).toFixed(2)}}</h4>
+        <h4>{{ $t('total') }}: {{ (subTotal + shipping).toFixed(2)}}</h4>
       </div>
 
-      <div v-for="(product, index) in myCart" v-bind:key="index">
+      <div v-for="(product, index) in getItemsCart" v-bind:key="index">
         <p>
           {{product.name}} x {{product.quantity}}
-           <button v-on:click="plusQty(product.id)">+</button><button v-on:click="minusQty(product.id)">-</button>
+           <button v-on:click="plusQty(product.id)">+</button>
+           <button v-on:click="minusQty(product.id)">-</button>
           | {{ product.price}} UN
         </p>
       </div>
     </div>
-    <button
+    <!-- <button
       class="btn btn-success"
       style="width: auto;"
       id="show-modal"
       @click="showModal = true"
-    >Pay Now</button>
+    >Pay Now</button> -->
 
+     <button class="btn btn-success" @click="pay">{{ $t('pay') }}</button>
     
     <div class="shipping-address">
-      <h3>Shipping Address</h3>
-      {{ getQuantityCart }}
-      <br>
-      <ul>
-        <div v-for="(item, index) in getItemsCart" v-bind:key="index" >
-          <li> {{ item.name }}</li>
-        </div>
-      </ul>
+      <h3> {{ $t('shippingaddress') }} {{ getTotalAmout }}</h3>
+      <br>      
       <div v-for="(info, index) in customer" v-bind:key="index">
-        <p>Customer: {{ info.fullName }}</p>
-        <p>Address: {{ info.address }}</p>
+        <p> {{ $t('customer') }}: {{ info.fullName }}</p>
+        <p>{{ $t('address') }}: {{ info.address }}</p>
         <p>Email: {{ info.email}}</p>
       </div>
     </div>
-      <button v-on:click="commitIntoStore"> Push items to store</button>
-
-      <button v-on:click="removeItems"> Remove item</button>
     <payment-modal v-if="showModal" @close="showModal = false"></payment-modal>
   </div>
-</template>
+  </div>
+</template> 
 
 <script>
 
@@ -67,7 +63,7 @@ export default {
         {
           fullName: "Hecton Paulino Domingos",
           email: "hectonpdomingos@gmail.com",
-          address: "Rua Jose Ribeiro Sobrinho 76 - São vicente - Brazil",
+          address: "Rua Jose Ribeiro - São vicente - Brazil",
           shippingPrice: "22.99"
         }
       ]
@@ -86,18 +82,30 @@ export default {
     },
     removeItems(){
        this.$store.commit('removeItem', 1)
+    },
+    pay() {
+      this.$store.commit('pay');
     }
+
   },
   computed: {
   
-
+    getTotalAmout() {
+       if(this.$store.getters.getTotalFromController) {
+         this.showModal = true;
+         return this.$store.getters.getTotalFromController;
+         
+       }
+     
+    },    
     getQuantityCart(){
       return this.$store.getters.quantity;
      },
      getItemsCart(){
-       return this.$store.getters.items.filter(item => item.quantity !== "0");
+      return this.$store.getters.items.filter(item => item.quantity !== "0");
      },
     myCart: function() {
+      console.log(this.$store.getters.items.id);
       return this.$store.getters.items.filter(item => item.quantity !== "0");
     },
     leaveTheCart: function() {
@@ -132,10 +140,4 @@ export default {
 };
 </script>
 
-<style scoped>
-.product-list {
-  width: 70%;
-  height: auto;
-  background-color: ‎#6f4e37;
-}
-</style>
+

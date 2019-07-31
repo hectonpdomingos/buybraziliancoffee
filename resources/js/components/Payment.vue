@@ -6,18 +6,21 @@
 
           <div class="modal-header">
             <slot name="header">
-              Insert your Credit Cart Info
+             
             </slot>
           </div>
 
           <div class="modal-body">
             <slot name="body">
               
-            <form action="/purchase/{purchase}" method="PATCH">    
-            <input type="text" class="form-control">
+            <form action="/purchase/{purchase}" method="PATCH">   
+            <!-- {{ getItems }} -->
+            
+            <h1>Total: {{ total }}</h1>
             <stripe-checkout
                 stripe-key="pk_test_cwyFNXgdnhj1ZTyhNLfLqSgy"
                  :product="products"
+                 :total="total"
                  >
             </stripe-checkout>
             </form>
@@ -43,7 +46,11 @@
 
 
 <script>
+
+import { mapGetters, mapActions } from 'vuex'
 export default {
+  
+
   data () {
     return {
        csrf: document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
@@ -52,11 +59,19 @@ export default {
                 id:1,
                 name:'Product A',
                 description:'Product A Description',
-                amount:100000
+                amount: 10000
             }
         ]     
     }
   }, 
+  computed: {
+    total() {
+        return this.$store.getters.getTotalFromController;
+    },
+    // getItems (){
+    //   return this.$store.getters.items;
+    // }
+  }
 }
 </script>
 

@@ -1,29 +1,36 @@
 <template>
   <div>
+      <div>
+            <button v-for="entry in languages" :key="entry.title" @click="changeLocale(entry.language)">
+                <flag :iso="entry.flag" v-bind:squared=false /> {{entry.title}}
+            </button>
+    </div>
     <div class="cart" >
       <transition name="fade">
         <p  v-if="this.$store.getters.quantity > 0" v-on:click="showCart" type="button" class="btn btn-success">
           <span class="badge badge-secondary">{{this.$store.getters.quantity }}</span>
-          Checkout
+          {{ $t('checkout') }}
         </p>
       </transition>
       <transition name="fade">
         <checkout-page v-if="this.$store.getters.quantity > 0"></checkout-page>
       </transition>
     </div>
+  
     <div class="menu">
-      <h3>Order By</h3>
+      <h3>{{ $t('orderby') }}</h3>
       <div class="row sortBy">
-        <a v-on:click="orderByPrice">Price</a>
-        <a v-on:click="orderByProducer">Producer</a>
-        <a v-on:click="orderByPrice">Type</a>
+        <a v-on:click="orderByPrice">{{ $t('price') }}</a>
+        <a v-on:click="orderByProducer">{{ $t('producer') }}</a>
+        <a v-on:click="orderByPrice">{{ $t('type') }}</a>
       </div>
     </div>
     <div class="vitrine">
       <div v-for="(product, index) in paginatedData" v-bind:key="index">
+        
         <div class="vitrine-card">
           <div class="card">
-            <img class="card-img-top" :src="product.photo" alt="Card image cap">
+            <img class="card-img-top" :src="product.photo"   alt="Card image cap">
             <div class="card-body">
                <h5 class="card-title">{{product.name }}</h5>
               <h5 class="card-title">{{product.coffeetype}}</h5>
@@ -34,23 +41,25 @@
                 : {{ product.price }} UN
               </p>
               <a v-on:click="addItem(product)" class="btn btn-success" style="width: 13rem;">
-                Add on
+                {{ $t('buy') }}
                 <i class="fas fa-cart-plus"></i>
               </a>
             </div>
           </div>
         </div>
+     
       </div>
     </div>
     <div class="row col-4">
-      <button class="btn btn-success" :disabled="pageNumber === 0" @click="prevPage">Previous</button>
-      <button class="btn btn-success" :disabled="pageNumber >= pageCount -1" @click="nextPage">Next</button>
+      <button class="btn btn-success" :disabled="pageNumber === 0" @click="prevPage"> {{ $t('previous') }}</button>
+      <button class="btn btn-success" :disabled="pageNumber >= pageCount -1" @click="nextPage"> {{ $t('next') }}</button>
     </div>
   </div>
 </template>
 
 
 <script>
+import i18n from '../plugins/i18n';
 import { mapGetters, mapActions } from 'vuex'
 import { store } from '../store/store';
 import CheckOut from "./Checkout.vue";
@@ -59,6 +68,12 @@ import CheckOut from "./Checkout.vue";
 export default {
   data() {
     return {
+      languages: [
+          { flag: 'us', language: 'en', title: 'English' },
+          { flag: 'br', language: 'br', title: 'Português' },
+          { flag: 'ru', language: 'ru', title: 'Russian' }
+      ],
+      url: 'https://google.com.br',
       products: [],  //products from database passed by axios, but the list gets data from paginatedData function.
       checkout: false,  // True if the user added any item there.
       pageNumber: 0, 
@@ -78,6 +93,9 @@ export default {
   },
 
   methods: {
+      changeLocale(locale) {
+      i18n.locale = locale;
+    },
     showCart() {
       console.log('Firing the showCart')
       this.checkout = !this.checkout;
@@ -213,6 +231,7 @@ export default {
 
 
 <style scoped>
+
 .fade-fade-enter-active {
   transition: all 0.3s ease;
 }

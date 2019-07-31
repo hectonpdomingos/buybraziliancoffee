@@ -18,6 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/paypal',function () {
+  return view('Paypal');
+});
 Route::get('/about', function () {
   return view('about');
 });
@@ -28,6 +33,6 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('products', 'ProductController'); //, ['except' => 'submit']);
     Route::resource('checkout', 'CheckoutController'); 
     Route::resource('form-product', 'FormProductController');
+    Route::resource('purchase', 'PurchaseController');   
 });
 
-Route::resource('/purchase', 'PurchaseController');   

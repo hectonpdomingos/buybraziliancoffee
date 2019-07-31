@@ -15,7 +15,7 @@ class PurchaseController extends Controller
      */
     public function index()
     {
-        //
+        return "index";
     }
 
     /**
@@ -25,7 +25,7 @@ class PurchaseController extends Controller
      */
     public function create()
     {
-        //
+        return "create";
     }
 
     /**
@@ -36,7 +36,8 @@ class PurchaseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+       return response()->json([$request->all()]);
     }
 
     /**
@@ -47,7 +48,9 @@ class PurchaseController extends Controller
      */
     public function show($id)
     {
-        dd(request()->all());
+        
+      //dd(request()->all());
+       return response()->json([$request->all()]);
        
         // Stripe::setApiKey(config('services.stripe.secret'));
 
@@ -91,10 +94,36 @@ class PurchaseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request, $id){
+
+    // $products = $request->data;
+    
+
+        $sum = 0;
+        $result = $request->data;
+       
+        foreach($result as $product) {
+            $sum += $product['price'];
+        }
+
+        //return $sum;
+        //return redirect('home')->with('status', $sum);
+
+
+    //return $this->sendResponse($products);
+      //  return redirect('home')->with('status', 'Thanks for buy our products! Our warehouse will get your order and send to you the best coffee! ;)');
+
+       //return response()->json([$request->all()]);
+    return $this->sendResponse($sum);
     }
+    public function sendResponse($products){
+        $response = [
+            'success' => true,
+            'message' => $products,
+        ];
+        return response()->json($response, 200);
+    }
+    
 
     /**
      * Remove the specified resource from storage.

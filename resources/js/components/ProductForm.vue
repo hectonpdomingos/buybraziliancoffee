@@ -62,7 +62,7 @@
 
 
 
-         <p v-if="errors.length == 0">
+         <p v-if="errors.length">
             <b>Please correct the following error(s):</b>
             <ul>
             <li v-for="(error, index) in errors" v-bind:key="index">{{ error[index] }}</li>

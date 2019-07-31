@@ -1,21 +1,9 @@
 const _ = require ('lodash');
 
-
-
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 require('./bootstrap');
-const Dinero = require('dinero.js');
-
-
 
 window.Vue = require('vue');
 window.axios = require('axios');
-
 
 
 //vuex store
@@ -23,8 +11,16 @@ import { store } from './store/store.js'
 
 
 //stripe
-import { StripeCheckout } from 'vue-stripe'
+import { StripeCheckout } from 'vue-stripe';
 Vue.component('stripe-checkout', StripeCheckout);
+
+//vue-i18n internationalization
+import i18n from './plugins/i18n';
+
+//icons 
+import FlagIcon from 'vue-flag-icon';
+Vue.use(FlagIcon);
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -45,6 +41,8 @@ Vue.component('product-list', require('./components/ProductList.vue').default);
 Vue.component('payment-modal', require('./components/Payment.vue').default);
 Vue.component('checkout-page', require('./components/Checkout.vue').default);
 Vue.component('product-form', require('./components/ProductForm.vue').default);
+
+Vue.component('paypal-form', require('./components/PaypalComponent.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -53,7 +51,8 @@ Vue.component('product-form', require('./components/ProductForm.vue').default);
 
 const app = new Vue({
     el: '#app',
-    store
+    store,
+    i18n
     
     
 });

@@ -170,20 +170,7 @@ export default {
       return new Function("return " + fn)();
     },
 
-    // checkOut() {
-    //   axios
-    //     .post("/checkout", {
-    //       myCart: this.cart,
-    //       totalValue: totalCart.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
-    //     })
-    //     .then(function(response) {
-    //       console.log(response);
-    //     })
-    //     .catch(function(error) {
-    //       console.log(error);
-    //     });
-    // }
-  },
+    },
  
   computed: {
 

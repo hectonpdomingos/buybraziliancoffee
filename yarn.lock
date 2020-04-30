@@ -543,6 +543,40 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
+"@braintree/asset-loader@0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@braintree/asset-loader/-/asset-loader-0.3.1.tgz#2ee703193fba9f479e674e76ac83f2ccfd6e7a9e"
+  dependencies:
+    promise-polyfill "^8.1.0"
+
+"@braintree/browser-detection@1.9.0", "@braintree/browser-detection@^1.9.0":
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/@braintree/browser-detection/-/browser-detection-1.9.0.tgz#bbaca6965a0685d0d91fd6e9194db034857d1d46"
+
+"@braintree/class-list@0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@braintree/class-list/-/class-list-0.1.0.tgz#d6c8606ce6a82b4b37f28e32eadd090abcf1adaa"
+
+"@braintree/event-emitter@0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@braintree/event-emitter/-/event-emitter-0.3.0.tgz#8239ad51c71707b317f30da2d29abb369f91a579"
+
+"@braintree/extended-promise@0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@braintree/extended-promise/-/extended-promise-0.3.0.tgz#84e99105e520c6c454c3922848b13222b8999c50"
+
+"@braintree/iframer@1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@braintree/iframer/-/iframer-1.0.3.tgz#21dd1fd4cebd4154aeab1efa4d5b0d5f4384364e"
+
+"@braintree/sanitize-url@4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@braintree/sanitize-url/-/sanitize-url-4.0.1.tgz#16e719eba72693f95989c05f2b3b424f2aabc5b0"
+
+"@braintree/wrap-promise@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@braintree/wrap-promise/-/wrap-promise-2.0.0.tgz#6bf4bd934f18bb1b460bdd608d81154db8d2ff65"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -707,6 +741,10 @@
 "@xtuc/long@4.2.2":
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
+
+Base64@^1.0.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/Base64/-/Base64-1.1.0.tgz#810ef21afa8357df92ad7b5389188c446b9cb956"
 
 abbrev@1:
   version "1.1.1"
@@ -899,12 +937,11 @@ autoprefixer@^9.4.2:
     postcss "^7.0.14"
     postcss-value-parser "^3.3.1"
 
-axios@^0.18:
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.18.0.tgz#32d53e4851efdc0a11993b6cd000789d70c05102"
+axios@^0.19.0:
+  version "0.19.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
   dependencies:
-    follow-redirects "^1.3.0"
-    is-buffer "^1.1.5"
+    follow-redirects "1.5.10"
 
 babel-code-frame@^6.26.0:
   version "6.26.0"
@@ -954,6 +991,20 @@ base@^0.11.1:
 batch@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/batch/-/batch-0.6.1.tgz#dc34314f4e679318093fc760272525f94bf25c16"
+
+beaver-logger@^3.0.17, beaver-logger@^3.0.6:
+  version "3.0.19"
+  resolved "https://registry.yarnpkg.com/beaver-logger/-/beaver-logger-3.0.19.tgz#1d9d95ec67acb62c70cde0a284395a6e07e6ca79"
+  dependencies:
+    zalgo-promise "^1.0.26"
+
+belter@^1.0.77, belter@^1.0.96:
+  version "1.0.120"
+  resolved "https://registry.yarnpkg.com/belter/-/belter-1.0.120.tgz#91499301b543b983c81bf12a9edd33e8ed30774b"
+  dependencies:
+    cross-domain-safe-weakmap "^1.0.20"
+    cross-domain-utils "^2.0.10"
+    zalgo-promise "^1.0.28"
 
 big.js@^5.2.2:
   version "5.2.2"
@@ -1005,6 +1056,10 @@ bootstrap@^4.0.0:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.3.1.tgz#280ca8f610504d99d7b6b4bfc4b68cec601704ac"
 
+bowser@^1.7.1:
+  version "1.9.4"
+  resolved "https://registry.yarnpkg.com/bowser/-/bowser-1.9.4.tgz#890c58a2813a9d3243704334fa81b96a5c150c9a"
+
 brace-expansion@^1.1.7:
   version "1.1.11"
   resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.11.tgz#3c7fcbf529d87226f3d2f52b966ff5271eb441dd"
@@ -1026,6 +1081,25 @@ braces@^2.3.1, braces@^2.3.2:
     snapdragon-node "^2.0.1"
     split-string "^3.0.2"
     to-regex "^3.0.1"
+
+braintree-web@^3.41.0:
+  version "3.61.0"
+  resolved "https://registry.yarnpkg.com/braintree-web/-/braintree-web-3.61.0.tgz#0d44a99f6f56ce2adaaada840665731a12040b87"
+  dependencies:
+    "@braintree/asset-loader" "0.3.1"
+    "@braintree/browser-detection" "1.9.0"
+    "@braintree/class-list" "0.1.0"
+    "@braintree/event-emitter" "0.3.0"
+    "@braintree/extended-promise" "0.3.0"
+    "@braintree/iframer" "1.0.3"
+    "@braintree/sanitize-url" "4.0.1"
+    "@braintree/wrap-promise" "2.0.0"
+    card-validator "6.2.0"
+    credit-card-type "8.3.0"
+    framebus "3.0.2"
+    inject-stylesheet "2.0.0"
+    promise-polyfill "8.1.3"
+    restricted-input "2.1.0"
 
 brorand@^1.0.1:
   version "1.1.0"
@@ -1205,6 +1279,12 @@ caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000947, caniuse-lite@^1.0.30000951:
   version "1.0.30000951"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000951.tgz#c7c2fd4d71080284c8677dd410368df8d83688fe"
 
+card-validator@6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/card-validator/-/card-validator-6.2.0.tgz#59037c6480df5786473cab720f165ba868560e0b"
+  dependencies:
+    credit-card-type "^8.0.0"
+
 chalk@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-1.1.3.tgz#a8115c55e4a702fe4d150abd3872822a7e09fc98"
@@ -1276,6 +1356,10 @@ clean-css@4.2.x, clean-css@^4.1.3:
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.2.1.tgz#2d411ef76b8569b6d0c84068dabe85b0aa5e5c17"
   dependencies:
     source-map "~0.6.0"
+
+cleave.js@^1.4.10:
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/cleave.js/-/cleave.js-1.5.10.tgz#04444703713d89eb6e2f7f75240061fa29d72722"
 
 cliui@^4.0.0:
   version "4.1.0"
@@ -1523,12 +1607,27 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-cross-env@^5.1:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-5.2.0.tgz#6ecd4c015d5773e614039ee529076669b9d126f2"
+credit-card-type@8.3.0, credit-card-type@^8.0.0:
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/credit-card-type/-/credit-card-type-8.3.0.tgz#f93c187c9362411544158c91d552efcc443aa87a"
+
+cross-domain-safe-weakmap@^1.0.1, cross-domain-safe-weakmap@^1.0.20, cross-domain-safe-weakmap@^1.0.22:
+  version "1.0.27"
+  resolved "https://registry.yarnpkg.com/cross-domain-safe-weakmap/-/cross-domain-safe-weakmap-1.0.27.tgz#81a5eae012b3cfb7e7e5ca3d737a6c94c3499bab"
+  dependencies:
+    cross-domain-utils "^2.0.0"
+
+cross-domain-utils@^2.0.0, cross-domain-utils@^2.0.1, cross-domain-utils@^2.0.10, cross-domain-utils@^2.0.16:
+  version "2.0.32"
+  resolved "https://registry.yarnpkg.com/cross-domain-utils/-/cross-domain-utils-2.0.32.tgz#e2e5ec828f7a278c72e53c969993f8b32f974e7d"
+  dependencies:
+    zalgo-promise "^1.0.11"
+
+cross-env@^5.2.0:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-5.2.1.tgz#b2c76c1ca7add66dc874d11798466094f551b34d"
   dependencies:
     cross-spawn "^6.0.5"
-    is-windows "^1.0.0"
 
 cross-spawn@^6.0.0, cross-spawn@^6.0.5:
   version "6.0.5"
@@ -1728,9 +1827,19 @@ date-now@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
 
+de-indent@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/de-indent/-/de-indent-1.0.2.tgz#b2038e846dc33baa5796128d0804b455b8c1e21d"
+
 debug@2.6.9, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
+  dependencies:
+    ms "2.0.0"
+
+debug@=3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
   dependencies:
     ms "2.0.0"
 
@@ -1853,6 +1962,10 @@ diffie-hellman@^5.0.0:
     bn.js "^4.1.0"
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
+
+dinero.js@^1.6.0:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/dinero.js/-/dinero.js-1.8.1.tgz#775a647629b4195af9d02f46e9b7fa1fd81e906d"
 
 dir-glob@2.0.0:
   version "2.0.0"
@@ -2005,6 +2118,10 @@ es-to-primitive@^1.2.0:
     is-callable "^1.1.4"
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
+
+es6-promise@^4.0.5:
+  version "4.2.8"
+  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.8.tgz#4eb21594c972bc40553d276e510539143db53e0a"
 
 es6-templates@^0.2.3:
   version "0.2.3"
@@ -2269,6 +2386,10 @@ findup-sync@^2.0.0:
     micromatch "^3.0.4"
     resolve-dir "^1.0.1"
 
+flag-icon-css@^2.8.0:
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/flag-icon-css/-/flag-icon-css-2.9.0.tgz#5793c15244e3c63ae36631478a758a3fc29c86be"
+
 flush-write-stream@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/flush-write-stream/-/flush-write-stream-1.1.1.tgz#8dd7d873a1babc207d94ead0c2e0e44276ebf2e8"
@@ -2276,7 +2397,13 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
-follow-redirects@^1.0.0, follow-redirects@^1.3.0:
+follow-redirects@1.5.10:
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
+  dependencies:
+    debug "=3.1.0"
+
+follow-redirects@^1.0.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.7.0.tgz#489ebc198dc0e7f64167bd23b03c4c19b5784c76"
   dependencies:
@@ -2296,6 +2423,10 @@ for-own@^1.0.0:
   dependencies:
     for-in "^1.0.1"
 
+form-serialize@^0.7.2:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/form-serialize/-/form-serialize-0.7.2.tgz#b0a2ff0c22026fb6d3d15c9d33f6de6a432e4732"
+
 forwarded@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/forwarded/-/forwarded-0.1.2.tgz#98c23dab1175657b8c0573e8ceccd91b0ff18c84"
@@ -2305,6 +2436,10 @@ fragment-cache@^0.2.1:
   resolved "https://registry.yarnpkg.com/fragment-cache/-/fragment-cache-0.2.1.tgz#4290fad27f13e89be7f33799c6bc5a0abfff0d19"
   dependencies:
     map-cache "^0.2.2"
+
+framebus@3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/framebus/-/framebus-3.0.2.tgz#0c99c70cb507522aae6ed485e1317fc913873a8a"
 
 fresh@0.5.2:
   version "0.5.2"
@@ -2543,13 +2678,17 @@ hash.js@^1.0.0, hash.js@^1.0.3:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.1"
 
-he@1.2.x:
+he@1.2.x, he@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
 
 hex-color-regex@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
+
+hi-base32@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/hi-base32/-/hi-base32-0.5.0.tgz#61329f76a31f31008533f1c36f2473e259d64571"
 
 hmac-drbg@^1.0.0:
   version "1.0.1"
@@ -2757,6 +2896,10 @@ inherits@2.0.1:
 ini@^1.3.4, ini@~1.3.0:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
+
+inject-stylesheet@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/inject-stylesheet/-/inject-stylesheet-2.0.0.tgz#5153437cbb30c55a203613a6f079a94089b6c361"
 
 internal-ip@^4.2.0:
   version "4.2.0"
@@ -2974,7 +3117,7 @@ is-symbol@^1.0.2:
   dependencies:
     has-symbols "^1.0.0"
 
-is-windows@^1.0.0, is-windows@^1.0.1, is-windows@^1.0.2:
+is-windows@^1.0.1, is-windows@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/is-windows/-/is-windows-1.0.2.tgz#d1850eb9791ecd18e6182ce12a30f396634bb19d"
 
@@ -3000,9 +3143,9 @@ isobject@^3.0.0, isobject@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
 
-jquery@^3.2:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
+jquery@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.5.0.tgz#9980b97d9e4194611c36530e7dc46a58d7340fc9"
 
 js-levenshtein@^1.1.3:
   version "1.1.6"
@@ -3252,6 +3395,10 @@ lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.5:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
 
+lodash@^4.17.14:
+  version "4.17.15"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
+
 loglevel@^1.4.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.6.1.tgz#e0fc95133b6ef276cdc8887cdaf24aa6f156f8fa"
@@ -3364,6 +3511,10 @@ merge-source-map@^1.1.0:
 merge2@^1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/merge2/-/merge2-1.2.3.tgz#7ee99dbd69bb6481689253f018488a1b902b0ed5"
+
+merge@^1.2.0:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/merge/-/merge-1.2.1.tgz#38bebf80c3220a8a487b6fcfb3941bb11720c145"
 
 methods@~1.1.2:
   version "1.1.2"
@@ -3932,6 +4083,21 @@ path-type@^3.0.0:
   dependencies:
     pify "^3.0.0"
 
+paypal-checkout@^4.0.241:
+  version "4.0.314"
+  resolved "https://registry.yarnpkg.com/paypal-checkout/-/paypal-checkout-4.0.314.tgz#0ec56066fc43ec34b76660ad09132e7cd340d71c"
+  dependencies:
+    Base64 "^1.0.0"
+    beaver-logger "^3.0.6"
+    belter "^1.0.96"
+    bowser "^1.7.1"
+    cross-domain-utils "^2.0.1"
+    form-serialize "^0.7.2"
+    hi-base32 "^0.5.0"
+    post-robot "^8.0.0"
+    zalgo-promise "^1.0.10"
+    zoid "^6.0.67"
+
 pbkdf2@^3.0.3:
   version "3.0.17"
   resolved "https://registry.yarnpkg.com/pbkdf2/-/pbkdf2-3.0.17.tgz#976c206530617b14ebb32114239f7b09336e93a6"
@@ -3985,6 +4151,14 @@ portfinder@^1.0.9:
 posix-character-classes@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/posix-character-classes/-/posix-character-classes-0.1.1.tgz#01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab"
+
+post-robot@^8.0.0, post-robot@^8.0.29:
+  version "8.0.31"
+  resolved "https://registry.yarnpkg.com/post-robot/-/post-robot-8.0.31.tgz#0b5592b695d9252b86105b50b33d4469447349d5"
+  dependencies:
+    cross-domain-safe-weakmap "^1.0.1"
+    cross-domain-utils "^2.0.0"
+    zalgo-promise "^1.0.3"
 
 postcss-calc@^7.0.1:
   version "7.0.1"
@@ -4306,6 +4480,10 @@ promise-inflight@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/promise-inflight/-/promise-inflight-1.0.1.tgz#98472870bf228132fcbdd868129bad12c3c029e3"
 
+promise-polyfill@8.1.3, promise-polyfill@^8.1.0:
+  version "8.1.3"
+  resolved "https://registry.yarnpkg.com/promise-polyfill/-/promise-polyfill-8.1.3.tgz#8c99b3cf53f3a91c68226ffde7bde81d7f904116"
+
 proxy-addr@~2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/proxy-addr/-/proxy-addr-2.0.4.tgz#ecfc733bf22ff8c6f407fa275327b9ab67e48b93"
@@ -4608,6 +4786,12 @@ resolve@^1.3.2, resolve@^1.8.1:
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.10.0.tgz#3bdaaeaf45cc07f375656dfd2e54ed0810b101ba"
   dependencies:
     path-parse "^1.0.6"
+
+restricted-input@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/restricted-input/-/restricted-input-2.1.0.tgz#3e2ff79e8fee53d3152cf859063701ded206582f"
+  dependencies:
+    "@braintree/browser-detection" "^1.9.0"
 
 ret@~0.1.10:
   version "0.1.15"
@@ -5364,9 +5548,19 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
+vue-flag-icon@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/vue-flag-icon/-/vue-flag-icon-1.0.6.tgz#0304fdfeebd982a6bf985c633c346ff3c6d2f9d7"
+  dependencies:
+    flag-icon-css "^2.8.0"
+
 vue-hot-reload-api@^2.3.0:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.3.tgz#2756f46cb3258054c5f4723de8ae7e87302a1ccf"
+
+vue-i18n@^8.12.0:
+  version "8.17.4"
+  resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-8.17.4.tgz#d314df7a3fa0780f86cff46a02752668f89b3935"
 
 vue-loader@^15.4.2:
   version "15.7.0"
@@ -5378,6 +5572,14 @@ vue-loader@^15.4.2:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
+vue-stripe@^0.1.52:
+  version "0.1.52"
+  resolved "https://registry.yarnpkg.com/vue-stripe/-/vue-stripe-0.1.52.tgz#e401d20a674ad258d503102559ddd095e11f249d"
+  dependencies:
+    es6-promise "^4.0.5"
+    merge "^1.2.0"
+    vue "^2"
+
 vue-style-loader@^4.1.0:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/vue-style-loader/-/vue-style-loader-4.1.2.tgz#dedf349806f25ceb4e64f3ad7c0a44fba735fcf8"
@@ -5385,13 +5587,28 @@ vue-style-loader@^4.1.0:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
+vue-template-compiler@^2.6.10:
+  version "2.6.11"
+  resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.6.11.tgz#c04704ef8f498b153130018993e56309d4698080"
+  dependencies:
+    de-indent "^1.0.2"
+    he "^1.1.0"
+
 vue-template-es2015-compiler@^1.9.0:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
 
+vue@^2:
+  version "2.6.11"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"
+
 vue@^2.5.17:
   version "2.6.10"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
+
+vuex@^3.1.1:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.3.0.tgz#665b4630ea1347317139fcc5cb495aab3ec5e513"
 
 watchpack@^1.5.0:
   version "1.6.0"
@@ -5634,3 +5851,19 @@ yargs@^12.0.5:
     which-module "^2.0.0"
     y18n "^3.2.1 || ^4.0.0"
     yargs-parser "^11.1.1"
+
+zalgo-promise@^1.0.10, zalgo-promise@^1.0.11, zalgo-promise@^1.0.26, zalgo-promise@^1.0.28, zalgo-promise@^1.0.3, zalgo-promise@^1.0.34:
+  version "1.0.44"
+  resolved "https://registry.yarnpkg.com/zalgo-promise/-/zalgo-promise-1.0.44.tgz#10b6888def701abc0681ec760d73e2bfd2448ae2"
+
+zoid@^6.0.67:
+  version "6.0.79"
+  resolved "https://registry.yarnpkg.com/zoid/-/zoid-6.0.79.tgz#b7069c05e05dbd0a94cf21cdc2d4273896820e65"
+  dependencies:
+    beaver-logger "^3.0.17"
+    belter "^1.0.77"
+    cross-domain-safe-weakmap "^1.0.22"
+    cross-domain-utils "^2.0.16"
+    hi-base32 "^0.5.0"
+    post-robot "^8.0.29"
+    zalgo-promise "^1.0.34"
